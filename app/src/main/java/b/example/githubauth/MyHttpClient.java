@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import okhttp3.Response;
 
 public class MyHttpClient extends OkHttpClient {
@@ -22,10 +23,12 @@ public class MyHttpClient extends OkHttpClient {
     private static class GitHubAuthInterceptor implements Interceptor {
         @Override
         public @NotNull Response intercept(@NonNull Chain chain) throws IOException {
+            final Request interceptRequest = new Request.Builder()
+//                    .addHeader("", "")
+                    .method(chain.request().method(), chain.request().body())
+                    .build();
 
-
-
-            return chain.proceed(chain.request());
+            return chain.proceed(interceptRequest);
         }
     }
 }

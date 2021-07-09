@@ -29,9 +29,21 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class FollowersList extends Fragment {
+public class FollowersListFragment extends Fragment {
+    private static final String CURRENT_LOGIN_TAG = "current_login";
     private final List<User> followers = new ArrayList<>();
     private String login;
+
+    public FollowersListFragment() {
+    }
+
+    public static Fragment newInstance(String currentLogin) {
+        final Fragment fragment = new FollowersListFragment();
+        final Bundle bundle = new Bundle();
+        bundle.putString(CURRENT_LOGIN_TAG, currentLogin);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

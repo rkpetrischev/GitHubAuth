@@ -8,19 +8,11 @@ import com.google.gson.Gson;
 import java.util.Collections;
 import java.util.List;
 
-public class App extends Application{
-
-
-
-
+public class App extends Application {
 
     @Override
-        public void onCreate() {
-            super.onCreate();
-        }
-
-
-
-
+    public void onCreate() {
+        super.onCreate();
+    }
 
 }

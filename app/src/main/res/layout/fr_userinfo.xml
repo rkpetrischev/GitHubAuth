@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/main_theme"
     android:orientation="vertical"
-    tools:context=".UserInfo">
+    tools:context=".UserInfoFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/avatar"

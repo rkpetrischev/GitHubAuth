@@ -7,13 +7,19 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ViewPagerAdapter extends FragmentStateAdapter {
 
     private  String current_login;
-    ViewPagerAdapter(FragmentActivity fragmentActivity, String current_login) {
+
+    public ViewPagerAdapter(@NonNull @NotNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
-        this.current_login= current_login;
     }
+//    ViewPagerAdapter(FragmentActivity fragmentActivity, String current_login) {
+//        super(fragmentActivity);
+//        this.current_login= current_login;
+//    }
 
     @NonNull
     @Override
@@ -22,17 +28,17 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
         bundle.putString("Current_login", current_login);
         switch (position){
             case 0 :
-                UserInfo userInfo = new UserInfo();
-                userInfo.setArguments(bundle);
-                return userInfo;
+                UserInfoFragment userInfoFragment = new UserInfoFragment();
+                userInfoFragment.setArguments(bundle);
+                return userInfoFragment;
             case 1 :
-                FollowersList followersList = new FollowersList();
-                followersList.setArguments(bundle);
-                return followersList;
+                FollowersListFragment followersListFragment = new FollowersListFragment();
+                followersListFragment.setArguments(bundle);
+                return followersListFragment;
         }
-        UserInfo userInfo = new UserInfo();
-        userInfo.setArguments(bundle);
-        return userInfo;
+        UserInfoFragment userInfoFragment = new UserInfoFragment();
+        userInfoFragment.setArguments(bundle);
+        return userInfoFragment;
     }
 
     @Override
