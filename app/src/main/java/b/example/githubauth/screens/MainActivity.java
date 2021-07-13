@@ -1,4 +1,4 @@
-package b.example.githubauth;
+package b.example.githubauth.screens;
 
 
 import android.annotation.SuppressLint;
@@ -9,6 +9,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import b.example.githubauth.BlankFragment;
+import b.example.githubauth.FollowersListFragment;
+import b.example.githubauth.UserInfoFragment;
 import b.example.githubauth.databinding.ActivityMainBinding;
 import b.example.githubauth.utils.adapters.ViewPagerAdapter;
 
