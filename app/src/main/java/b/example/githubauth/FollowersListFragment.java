@@ -22,6 +22,7 @@ import java.util.List;
 
 
 import b.example.githubauth.databinding.ItemsFollowerBinding;
+import b.example.githubauth.screens.MainActivity;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -62,7 +63,7 @@ public class FollowersListFragment extends Fragment {
 
         Bundle bundle = getArguments();
         assert bundle != null;
-        this.login = bundle.getString("Current_login");
+        this.login = bundle.getString(CURRENT_LOGIN_TAG);
 
 
         Retrofit retrofit = new Retrofit.Builder()

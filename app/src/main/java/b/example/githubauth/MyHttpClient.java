@@ -24,6 +24,7 @@ public class MyHttpClient extends OkHttpClient {
         @Override
         public @NotNull Response intercept(@NonNull Chain chain) throws IOException {
             final Request interceptRequest = new Request.Builder()
+                    .url(chain.request().url())
 //                    .addHeader("", "")
                     .method(chain.request().method(), chain.request().body())
                     .build();

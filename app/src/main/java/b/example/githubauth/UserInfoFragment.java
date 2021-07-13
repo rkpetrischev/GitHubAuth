@@ -56,8 +56,9 @@ public class UserInfoFragment extends Fragment {
 
             MyAPICall myAPICall = retrofit.create(MyAPICall.class);
 
-            disposable = myAPICall.getUser(login)
+            disposable = myAPICall.getUser(bundle.getString(CURRENT_LOGIN_TAG))
                     .subscribeOn(Schedulers.io())
+
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(user -> {
                                 binding.name.setText(user.getLogin());
