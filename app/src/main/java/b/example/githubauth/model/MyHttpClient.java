@@ -1,4 +1,4 @@
-package b.example.githubauth;
+package b.example.githubauth.model;
 
 
 import androidx.annotation.NonNull;

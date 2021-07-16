@@ -1,4 +1,4 @@
-package b.example.githubauth;
+package b.example.githubauth.screens.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

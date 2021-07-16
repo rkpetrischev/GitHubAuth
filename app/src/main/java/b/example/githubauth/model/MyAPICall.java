@@ -1,7 +1,8 @@
-package b.example.githubauth;
+package b.example.githubauth.model;
 
 import java.util.List;
 
+import b.example.githubauth.model.User;
 import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;

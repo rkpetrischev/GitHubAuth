@@ -9,9 +9,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import b.example.githubauth.BlankFragment;
-import b.example.githubauth.FollowersListFragment;
-import b.example.githubauth.UserInfoFragment;
+import b.example.githubauth.screens.fragments.BlankFragment;
+import b.example.githubauth.screens.fragments.flfragmentmvp.FollowersListFragment;
+import b.example.githubauth.screens.fragments.UserInfoFragment;
 import b.example.githubauth.databinding.ActivityMainBinding;
 import b.example.githubauth.utils.adapters.ViewPagerAdapter;
 
@@ -19,7 +19,6 @@ import b.example.githubauth.utils.adapters.ViewPagerAdapter;
 public class MainActivity extends AppCompatActivity {
 
     private final static String CURRENT_LOGIN_TAG = "current_login";
-
     private static final int USER_INFO_POSITION = 0;
     private static final int FOLLOWERS_POSITION = 1;
 
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         currentLogin = getIntent().getStringExtra(CURRENT_LOGIN_TAG);
+
 
         final ViewPagerAdapter adapter = new ViewPagerAdapter(
                 this,

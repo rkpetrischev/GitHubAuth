@@ -1,4 +1,4 @@
-package b.example.githubauth;
+package b.example.githubauth.model;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

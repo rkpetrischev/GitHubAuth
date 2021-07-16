@@ -1,4 +1,4 @@
-package b.example.githubauth;
+package b.example.githubauth.screens.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,11 @@ import androidx.fragment.app.Fragment;
 
 import com.squareup.picasso.Picasso;
 
+import b.example.githubauth.model.MyAPICall;
+import b.example.githubauth.R;
+import b.example.githubauth.model.RetrofitSingleton;
 import b.example.githubauth.databinding.FrUserinfoBinding;
+import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -19,9 +23,7 @@ import retrofit2.Retrofit;
 public class UserInfoFragment extends Fragment {
 
     private static final String CURRENT_LOGIN_TAG = "current_login";
-
     private FrUserinfoBinding binding;
-    private String login;
     private Disposable disposable;
 
     public UserInfoFragment() {
@@ -58,7 +60,6 @@ public class UserInfoFragment extends Fragment {
 
             disposable = myAPICall.getUser(bundle.getString(CURRENT_LOGIN_TAG))
                     .subscribeOn(Schedulers.io())
-
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(user -> {
                                 binding.name.setText(user.getLogin());
